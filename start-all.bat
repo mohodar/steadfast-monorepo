@@ -150,14 +150,20 @@ REM Wait for a few seconds to allow the app to start
 timeout /t 5
 
 REM Open the default browser to the API's URL
-echo Opening browser to API's URL...
-start http://localhost:3000
+echo:
+@REM echo Opening browser to API's URL...
+echo API server is running on http://localhost:3000/
+@REM start http://localhost:3000
 
 REM Open the default browser to the app's URL
-echo Opening browser to app's URL...
-start http://localhost:5173
+echo App server is running on http://localhost:5173/
 
-echo Services started and browsers opened. Close this window to stop all services.
+echo If you want to open URL in browser simply click on the link while pressing CTRL.
+@REM echo Opening browser to app's URL...
+@REM start http://localhost:5173
+
+@REM echo Services started and browsers opened. Close this window to stop all services.
+echo Services started. Close this window to stop all services.
 echo Press any key to stop all services...
 pause > nul
 
@@ -168,6 +174,7 @@ REM Kill all python processes
 taskkill /F /IM python.exe > nul 2>&1
 
 echo All services stopped.
+echo:
 goto menu
 
 :end
